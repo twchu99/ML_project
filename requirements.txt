@@ -1,16 +1,7 @@
-opencv-python  == 4.5.3.56
-streamlit  == 0.87.0
-tensorflow
-tensorflow-estimator
-tensorflow-io-gcs-filesystem
-keras
-Keras-Applications
-keras-nightly
-Keras-Preprocessing
-tf-estimator-nightly
-tf-nightly
-tb-nightly
-tensorboard
-tensorboard-data-server
-tensorboard-plugin-wit
-numpy
+import streamlit as st 
+import time
+import os
+import numpy as np
+import cv2
+from keras.models import load_model
+from bokeh.plotting import figure, show, output_file
