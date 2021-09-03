@@ -1,8 +1,8 @@
 opencv-python == 4.5.3.56
 streamlit == 0.87.0
-tensorflow == 2.7.0
-tensorflow-estimator == 2.7.0
-tensorflow-io-gcs-filesystem
+tensorflow == 2.6.0
+tensorflow-estimator == 1.13.0
+tensorflow-io-gcs-filesystem == 0.20.0
 keras == 2.6.0
 Keras-Applications == 1.0.8
 keras-nightly == 2.7.0.dev2021082907
@@ -13,4 +13,4 @@ tb-nightly == 2.7.0a20210827
 tensorboard == 2.6.0
 tensorboard-data-server == 0.6.1
 tensorboard-plugin-wit == 1.8.0
-numpy
+numpy == 1.21.2
