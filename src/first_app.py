@@ -66,7 +66,7 @@ def main():
         emotion_dict = {0: "Angry", 1: "Disgusted", 2: "Fearful", 3: "Happy", 4: "Neutral", 5: "Sad", 6: "Surprised"}
   
   
-        # input time in seconds
+        # input time in minutes
         timect = 60 * st.number_input("Enter the time in minutes: ", min_value=1, max_value=120)
         start_time = time.time()
         end_time = start_time + timect
@@ -104,7 +104,7 @@ def main():
                 maxindex = int(np.argmax(emotion_prediction))
                 results[maxindex] += 1
                 cv2.putText(frame, emotion_dict[maxindex], (x+20, y-60), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2, cv2.LINE_AA)
-                # tentative code
+
                 if (emotion_dict[maxindex] == 'Happy' or emotion_dict[maxindex] == 'Surprised'):
                     emotion_score += 1
                 elif (emotion_dict[maxindex] == 'Neutral'):
@@ -123,7 +123,6 @@ def main():
                 cv2.destroyAllWindows()
                 break
 
-        # analyze "results" and give suggestions accordingly
         total_frames = 0
         for i in range(len(results)):
             total_frames += results[i]
@@ -132,19 +131,19 @@ def main():
         positive_percentage = int(positive_frames / total_frames * 100)
         st.write('You were positive for ' + str(positive_percentage) + ' percent of the time.')
         if (positive_percentage < 50):
-            random_number = np.random.randint(0, 2)
+            random_number = np.random.randint(1, 3)
             if (random_number == 1):
                 st.write('You seem to be in high stress. Consider taking a walk outside, watching some memes on YouTube, or resorting to a few deep breaths.')
             else:
                 st.write('Consider purchasing a stress ball or playing Kick the Buddy. Its up to you to squeeze or punch, but it is probably better than what you are doing at the moment.')
         elif (positive_percentage > 75):
-            random_number = np.random.randint(0,2)
+            random_number = np.random.randint(1,3)
             if (random_number == 1):
-                st.write('You seem suspiciously happy in this world of constant pressure. Keep it up. Lets see how long you could last...')
+                st.write('You seem suspiciously happy in this world of constant pressure. Keep it up. Lets see how long you can last...')
             else:
                 st.write('Are you actually doing your work? You seem too happy to me.')
         else:
-            random_number = np.random.randint(0,2)
+            random_number = np.random.randint(1,3)
             if (random_number == 1):
                 st.write('Good job creating the mean for all of us to regress to. Keep it up!')
             else:
@@ -170,7 +169,7 @@ def main():
         st.balloons()
 
     elif choice == "Home":
-        t = "<h2 class='title blue'>Face Features Detection App</h2>"
+        t = "<h2 class='title blue'>Emotion Detection and Well-Being Monitor</h2>"
 
         st.markdown(t,unsafe_allow_html=True)
 
