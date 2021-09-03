@@ -1,5 +1,5 @@
-opencv-python
-streamlit
+opencv-python  == 4.5.3.56
+streamlit  == 0.87.0
 tensorflow
 tensorflow-estimator
 tensorflow-io-gcs-filesystem
